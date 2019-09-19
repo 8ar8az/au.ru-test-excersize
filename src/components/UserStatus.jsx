@@ -2,45 +2,72 @@ import React     from 'react';
 import PropTypes from 'prop-types';
 import _         from 'lodash';
 
-const UserStatus = ({
-  className,
-  editable,
-  status,
-  onStatusChange,
-  inputRef,
-}) => (
-  <div className={`tooltip user-status ${className}`}>
-    {
-      editable
-        ? (
-          <input
-            type="text"
-            className="input user-status__input"
-            value={status}
-            onChange={onStatusChange}
-            ref={inputRef}
-          />
-        ) : <div>{status || '***Ваш статус пока пуст***'}</div>
+export default class UserStatus extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.inputRef = React.createRef();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { editable: currentEditable } = this.props;
+    const { editable: previousEditable } = prevProps;
+
+    if (currentEditable && !previousEditable) {
+      this.inputRef.current.focus();
     }
-  </div>
-);
+  }
+
+  handleInputKeyPress = (event) => {
+    const { onEditModeChange } = this.props;
+
+    if (event.key === 'Enter') {
+      event.preventDefault();
+
+      onEditModeChange(false);
+    }
+  };
+
+  render() {
+    const {
+      className,
+      editable,
+      status,
+      onStatusChange,
+    } = this.props;
+
+    return (
+      <div className={`tooltip user-status ${className}`}>
+        {
+          editable
+            ? (
+              <input
+                type="text"
+                className="input user-status__input"
+                value={status}
+                onChange={onStatusChange}
+                onKeyPress={this.handleInputKeyPress}
+                ref={this.inputRef}
+              />
+            ) : <div>{status || '***Ваш статус пока пуст***'}</div>
+        }
+      </div>
+    );
+  }
+}
 
 UserStatus.propTypes = {
-  className:      PropTypes.string,
-  editable:       PropTypes.bool,
-  status:         PropTypes.string,
-  onStatusChange: PropTypes.func,
-  inputRef:       PropTypes.shape({
-    current: PropTypes.instanceOf(Element),
-  }),
+  className:        PropTypes.string,
+  editable:         PropTypes.bool,
+  status:           PropTypes.string,
+  onStatusChange:   PropTypes.func,
+  onEditModeChange: PropTypes.func,
 };
 
 UserStatus.defaultProps = {
-  className:      '',
-  editable:       false,
-  status:         '',
-  onStatusChange: _.noop,
-  inputRef:       { current: null },
+  className:        '',
+  editable:         false,
+  status:           '',
+  onStatusChange:   _.noop,
+  onEditModeChange: _.noop,
 };
-
-export default UserStatus;

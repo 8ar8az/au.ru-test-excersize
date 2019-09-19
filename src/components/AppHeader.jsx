@@ -11,21 +11,20 @@ export default class AppHeader extends React.Component {
       userStatus: 'Прежде чем действовать, надо понять',
       isUserStatusEditable: false,
     };
-
-    this.userStatusInputRef = React.createRef();
   }
 
   handleUserStatusButtonClick = () => {
     const { isUserStatusEditable } = this.state;
 
-    this.setState(
-      { isUserStatusEditable: !isUserStatusEditable },
-      () => this.userStatusInputRef.current && this.userStatusInputRef.current.focus(),
-    );
+    this.handleEditModeChange(!isUserStatusEditable);
   };
 
   handleStatusChange = (event) => {
     this.setState({ userStatus: event.target.value });
+  };
+
+  handleEditModeChange = (isUserStatusEditable, callback) => {
+    this.setState({ isUserStatusEditable }, callback);
   };
 
   render() {
@@ -44,7 +43,7 @@ export default class AppHeader extends React.Component {
               status={userStatus}
               editable={isUserStatusEditable}
               onStatusChange={this.handleStatusChange}
-              inputRef={this.userStatusInputRef}
+              onEditModeChange={this.handleEditModeChange}
             />
           </div>
         </h1>
