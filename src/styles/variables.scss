@@ -1,0 +1,16 @@
+$app-max-width: 990px;
+
+$colors: (
+  "grey": (
+    "lightest": #eaeaea,
+    "light": #999999,
+    "medium": #666666,
+    "dark": #404040
+  ),
+  "green": #71C838,
+  "black": #000000,
+  "blue": #0C77BB
+);
+
+$tooltip-standard-font-size: 0.9rem;
+$input-border-standard: 1px solid map-get(map-get($colors, "grey"), "light");

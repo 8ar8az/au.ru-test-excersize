@@ -1,0 +1,20 @@
+.tooltip {
+  background-color: map-get(map-get($colors, "grey"), "lightest");
+  padding: 15px;
+  position: relative;
+  font-size: $tooltip-standard-font-size;
+  line-height: $tooltip-standard-font-size;
+  font-weight: normal;
+  color: map-get(map-get($colors, "grey"), "dark");
+
+  &::before {
+    content: "";
+    background-color: map-get(map-get($colors, "grey"), "lightest");
+    height: 11px;
+    width: 11px;
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    transform: rotate(45deg);
+  }
+}

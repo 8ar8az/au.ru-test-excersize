@@ -1,0 +1,14 @@
+.user-status {
+  &__input {
+    border: none;
+    background-color: map-get(map-get($colors, "grey"), "lightest");
+    padding: 0;
+    margin: 0;
+    font-size: $tooltip-standard-font-size;
+    line-height: $tooltip-standard-font-size;
+    color: map-get(map-get($colors, "grey"), "dark");
+    width: 100%;
+    height: 0.9rem;
+    font-style: italic;
+  }
+}

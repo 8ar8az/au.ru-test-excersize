@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  padding: 90px 0;
+
+  &__greeting {
+    margin: 0;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 1.9rem;
+    font-weight: bold;
+    color: map-get(map-get($colors, "grey"), "medium");
+  }
+
+  &__username {
+    color: map-get($colors, "black");
+    display: inline-block;
+    position: relative;
+  }
+
+  &__user-status-button {
+    color: map-get($colors, "blue");
+    border-bottom: 1px dashed map-get($colors, "blue");
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 5px;
+  }
+
+  &__user-status {
+    position: absolute;
+    width: 503px;
+    top: 45px;
+  }
+}
