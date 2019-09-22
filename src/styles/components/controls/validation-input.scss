@@ -1,0 +1,23 @@
+.validation-input {
+  position: relative;
+
+  &__input {
+    width: 100%;
+
+    &_invalid {
+      border-color: map-get($colors, "red");
+    }
+  }
+
+  &__invalid-message {
+    position: absolute;
+    color: map-get($colors, "red");
+    font-size: 12px;
+    bottom: calc(0 - 100%);
+    margin-top: 5px;
+
+    @media screen and (max-width: $sm-displays-brakepoint) {
+      position: static;
+    }
+  }
+}

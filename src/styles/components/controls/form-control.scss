@@ -1,0 +1,40 @@
+.form-control {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $sm-displays-brakepoint) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__label {
+    font-size: 21px;
+    width: 23%;
+    flex-shrink: 0;
+
+    @media screen and (max-width: $sm-displays-brakepoint) {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__control {
+    width: 37%;
+    flex-shrink: 0;
+    
+    @media screen and (max-width: $sm-displays-brakepoint) {
+      width: 100%;
+    }
+  }
+
+  &__hint {
+    color: map-get(map-get($colors, "grey"), "light");
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 18px;
+
+    @media screen and (max-width: $sm-displays-brakepoint) {
+      margin: 5px 0 0 0;
+    }
+  }
+}

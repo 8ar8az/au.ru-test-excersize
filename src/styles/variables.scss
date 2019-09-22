@@ -1,5 +1,7 @@
 $app-max-width: 990px;
 
+$sm-displays-brakepoint: 767px;
+
 $colors: (
   "grey": (
     "lightest": #eaeaea,
@@ -7,10 +9,17 @@ $colors: (
     "medium": #666666,
     "dark": #404040
   ),
-  "green": #71C838,
+  "green": (
+    "light": #71C838,
+    "medium": rgb(58, 150, 21),
+    "dark": darkgreen
+  ),
   "black": #000000,
-  "blue": #0C77BB
+  "blue": #0C77BB,
+  "red": #FF0000,
+  "white": #FFFFFF
 );
 
-$tooltip-standard-font-size: 0.9rem;
+$tooltip-standard-font-size: 14px;
+$tooltip-standard-line-height: $tooltip-standard-font-size + 5px;
 $input-border-standard: 1px solid map-get(map-get($colors, "grey"), "light");

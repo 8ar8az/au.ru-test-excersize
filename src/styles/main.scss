@@ -1,8 +1,12 @@
 @import './variables.scss';
 
-@import './components/button.scss';
+@import './components/controls/common.scss';
+@import './components/controls/checkbox.scss';
+@import './components/controls/form-control.scss';
+@import './components/controls/validation-input.scss';
+@import './components/controls/select-input.scss';
 @import './components/tooltip.scss';
-@import './components/input.scss';
 @import './components/user-status.scss';
 @import './components/app.scss';
 @import './components/header.scss';
+@import './components/user-data-form.scss';

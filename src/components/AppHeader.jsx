@@ -1,5 +1,5 @@
-import React      from 'react';
-import PropTypes  from 'prop-types';
+import React          from 'react';
+import PropTypes      from 'prop-types';
 
 import UserStatus from './UserStatus';
 
@@ -16,15 +16,15 @@ export default class AppHeader extends React.Component {
   handleUserStatusButtonClick = () => {
     const { isUserStatusEditable } = this.state;
 
-    this.handleEditModeChange(!isUserStatusEditable);
+    this.setState({ isUserStatusEditable: !isUserStatusEditable });
   };
 
   handleStatusChange = (event) => {
     this.setState({ userStatus: event.target.value });
   };
 
-  handleEditModeChange = (isUserStatusEditable, callback) => {
-    this.setState({ isUserStatusEditable }, callback);
+  handleInputEnterPress = () => {
+    this.setState({ isUserStatusEditable: false });
   };
 
   render() {
@@ -43,7 +43,7 @@ export default class AppHeader extends React.Component {
               status={userStatus}
               editable={isUserStatusEditable}
               onStatusChange={this.handleStatusChange}
-              onEditModeChange={this.handleEditModeChange}
+              onInputEnterPress={this.handleInputEnterPress}
             />
           </div>
         </h1>

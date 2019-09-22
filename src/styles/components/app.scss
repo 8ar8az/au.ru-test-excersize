@@ -3,7 +3,15 @@
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
 
+  @media screen and (max-width: $sm-displays-brakepoint) {
+    max-width: 95%;
+  }
+
   &__header {
     width: 75%;
+
+    @media screen and (max-width: $sm-displays-brakepoint) {
+      width: 100%;
+    }
   }
 }

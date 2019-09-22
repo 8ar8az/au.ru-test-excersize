@@ -1,0 +1,55 @@
+.user-data-form {
+  &__group-controls {
+    padding: 35px 10px;
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid map-get(map-get($colors, "grey"), "lightest");
+
+    @media screen and (max-width: $sm-displays-brakepoint) {
+      padding: 25px 5px;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__form-control {
+    margin-bottom: 40px;
+
+    @media screen and (max-width: $sm-displays-brakepoint) {
+      margin-bottom: 30px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__submit-button {
+    color: map-get($colors, "white");
+    background-color: map-get(map-get($colors, "green"), "light");
+    font-size: 18px;
+    line-height: 20px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 0 0 map-get(map-get($colors, "green"), "medium");
+    border: none;
+
+    @media screen and (max-width: $sm-displays-brakepoint) {
+      align-self: center;
+    }
+
+    &:active {
+      background-color: darken(map-get(map-get($colors, "green"), "light"), 10%);
+      box-shadow: inset 0 0 15px 0 map-get(map-get($colors, "green"), "dark");;
+    }
+  }
+
+  &__last-change-hint {
+    @media screen and (max-width: $sm-displays-brakepoint) {
+      align-self: center;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+}

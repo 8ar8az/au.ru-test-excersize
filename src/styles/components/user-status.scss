@@ -1,3 +1,5 @@
+$user-status-max-height: 50px;
+
 .user-status {
   &__input {
     border: none;
@@ -5,10 +7,16 @@
     padding: 0;
     margin: 0;
     font-size: $tooltip-standard-font-size;
-    line-height: $tooltip-standard-font-size;
+    line-height: $tooltip-standard-line-height;
     color: map-get(map-get($colors, "grey"), "dark");
     width: 100%;
-    height: 0.9rem;
+    height: $tooltip-standard-font-size;
     font-style: italic;
+  }
+
+  &__content {
+    height: 100%;
+    overflow: auto;
+    max-height: $user-status-max-height;
   }
 }

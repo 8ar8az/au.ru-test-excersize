@@ -19,12 +19,12 @@ export default class UserStatus extends React.Component {
   }
 
   handleInputKeyPress = (event) => {
-    const { onEditModeChange } = this.props;
+    const { onInputEnterPress } = this.props;
 
     if (event.key === 'Enter') {
       event.preventDefault();
 
-      onEditModeChange(false);
+      onInputEnterPress();
     }
   };
 
@@ -49,7 +49,7 @@ export default class UserStatus extends React.Component {
                 onKeyPress={this.handleInputKeyPress}
                 ref={this.inputRef}
               />
-            ) : <div>{status || '***Ваш статус пока пуст***'}</div>
+            ) : <div className="user-status__content">{status || '***Ваш статус пока пуст***'}</div>
         }
       </div>
     );
@@ -57,17 +57,17 @@ export default class UserStatus extends React.Component {
 }
 
 UserStatus.propTypes = {
-  className:        PropTypes.string,
-  editable:         PropTypes.bool,
-  status:           PropTypes.string,
-  onStatusChange:   PropTypes.func,
-  onEditModeChange: PropTypes.func,
+  className:         PropTypes.string,
+  editable:          PropTypes.bool,
+  status:            PropTypes.string,
+  onStatusChange:    PropTypes.func,
+  onInputEnterPress: PropTypes.func,
 };
 
 UserStatus.defaultProps = {
-  className:        '',
-  editable:         false,
-  status:           '',
-  onStatusChange:   _.noop,
-  onEditModeChange: _.noop,
+  className:         '',
+  editable:          false,
+  status:            '',
+  onStatusChange:    _.noop,
+  onInputEnterPress: _.noop,
 };

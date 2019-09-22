@@ -1,0 +1,39 @@
+.select-input {
+  outline: none;
+
+  & &__control {
+    @extend .input;
+    padding: 0;
+    min-height: auto;
+    box-shadow: none;
+
+    &:hover {
+      border: $input-border-standard;
+    }
+  }
+
+  & &__indicators {
+    position: relative;
+  }
+
+  & &__dropdown-indicator {
+    position: absolute;
+    left: -32px;
+    top: -2px;
+    color: map-get($colors, "blue");
+
+    &:hover {
+      color: map-get($colors, "blue");
+    }
+  }
+
+  & &__indicator-separator {
+    display: none;
+  }
+
+  & &__loading-indicator {
+    position: absolute;
+    left: -80px;
+    color: map-get($colors, "blue");
+  }
+}

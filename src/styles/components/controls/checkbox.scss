@@ -1,0 +1,27 @@
+.checkbox {
+  &__input {
+    display: none;
+  }
+
+  &__fake-input {
+    height: 10px;
+    width: 10px;
+    border: 1px solid map-get($colors, "black");
+    position: relative;
+    margin-right: 10px;
+  }
+
+  &__done-icon {
+    color: map-get($colors, "blue");
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 10px;
+    position: absolute;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;  
+    line-height: 15px;
+  }
+}

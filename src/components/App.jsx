@@ -1,12 +1,12 @@
-import React              from 'react';
+import React         from 'react';
 
-import AppHeader          from './AppHeader';
-import UserDataChangeForm from './UserDataChangeForm';
+import AppHeader     from './AppHeader';
+import UserDataForm  from './UserDataForm';
 
 const App = () => (
   <div className="app">
     <AppHeader className="app__header" />
-    <UserDataChangeForm />
+    <UserDataForm />
   </div>
 );
 
