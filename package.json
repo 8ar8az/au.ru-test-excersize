@@ -50,6 +50,6 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-select": "^3.0.5",
-    "validator": "^11.1.0"
+    "validator": "^13.7.0"
   }
 }
